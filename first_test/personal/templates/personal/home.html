@@ -1,0 +1,8 @@
+{% extends "personal/layout.html"%}
+
+{% block content %}
+<p>This is home.html and extends layout.html....</p>
+<p>This is home.html and i also include the htmlsnipped.html</p>
+<p>this is in the %block content% of layout.html</p>
+{% include "personal/includes/htmlsnippet.html"%}
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "news/includes/maxcdnsnippet.html"%}
+<style>
+td {
+    padding: 1px;
+    border: 1px solid #4CAF50;
+}
+</style>
+    <meta charset="UTF-8">
+
+    <title>NEWS</title>
+
+</head>
+<body>
+    {% include "news/includes/navbar.html"%}
+
+    {% include "news/includes/searchform.html"%}
+    <p><h2> {{search_result}}</h2></p>
+
+<table border="1">
+
+{% for headline in news %}
+    <tr>
+        <td>
+        <p> {{ headline.dateadded }}  </pcaligment>
+    </td>
+    <td>
+        <a href="{{headline.url}}" target="_blank"> {{ headline.headline }}  </a>
+    </td>
+    <td>
+        <a href="{{headline.source}}" target="_blank"> {{ headline.source }}  </a>
+    </td>
+    </tr>
+
+{% endfor %}
+</table>
+
+    {% include "news/includes/newspaginator.html"%}
+
+</body>
+</html>
